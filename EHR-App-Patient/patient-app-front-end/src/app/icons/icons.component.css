@@ -1,0 +1,16 @@
+mat-form-field{
+    width: 100%;
+}
+textarea{
+    resize: none;
+}
+
+.snackbar {
+    max-width: 90% !important;
+    margin-left: auto !important;
+    margin-right: auto !important; 
+    margin-bottom: 1rem !important; 
+    padding: 10px !important;
+    background-color: #0b8357;
+    color: #f7f0cf;
+}

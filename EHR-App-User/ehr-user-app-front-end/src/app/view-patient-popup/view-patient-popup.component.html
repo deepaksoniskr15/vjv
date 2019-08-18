@@ -1,0 +1,31 @@
+<!-- <mat-toolbar matDialogTitle class="custom-color">
+  <mat-toolbar-row fxLayout="row" fxLayoutAlign="space-between center"> -->
+<!-- </mat-toolbar-row>
+</mat-toolbar> -->
+<h3 style="background: rgb(33, 33, 155); color: white; padding: 5px;">{{permission.requestedBy}} <button
+    style="float: right;  background: transparent; box-shadow: 0px;" mat-button (click)="matDialogRef.close()" aria-label="Close dialog">
+    <mat-icon>close</mat-icon>
+  </button></h3>
+<div fxlayoutAlign="center">
+  <h4>Request For</h4>
+  <p *ngFor="let element of permission.requestFor">
+    {{element}}
+  </p>
+
+  <span *ngIf="permission.status === 0" style="color: white; background: yellow; color: black;">Pending</span>
+
+  <span *ngIf="permission.status === 1" style="color: white; background: rgb(15, 77, 2);">Approve</span>
+
+  <span *ngIf="permission.status === 2" style="color: white; background: rgb(224, 10, 10);">Reject</span>
+
+
+  <button *ngIf="permission.status === 0" mat-raised-button color="primary" style="float: right;"
+    (click)="changeStatus(2)">
+    Reject
+  </button>
+  <button *ngIf="permission.status === 0" mat-raised-button color="primary" style="float: right;"
+    (click)="changeStatus(1)">
+    Approve
+  </button>
+
+</div>

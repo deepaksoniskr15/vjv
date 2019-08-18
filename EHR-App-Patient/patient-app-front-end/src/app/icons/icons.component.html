@@ -1,0 +1,453 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="card card-plain">
+            <div class="card-header card-header-danger">
+                <h4 class="card-title">Add Patient</h4>
+                <!-- <p class="card-category">Handcrafted by our friends from
+                    <a target="_blank" href="https://design.google.com/icons/">Google</a>
+                </p> -->
+            </div>
+            <div class="card-body">
+                <form [formGroup]="patientForm">
+
+                    <div *ngIf="type === 'basic'">
+                        <h3>Patient Information</h3>
+                        <div class="row" fxLayoutAlign="start start">
+                            <div class="col-sm-6">
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Patient Name</mat-label>
+                                    <input matInput formControlName="patientName" required
+                                        placeholder="Enter Your Patient Name">
+                                    <mat-error>
+                                        Patient Name is required &nbsp;:&nbsp;
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+                            <div class="col-sm-6">
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Home Phone</mat-label>
+                                    <input matInput type="number" formControlName="homePhone" required
+                                        placeholder="Enter Your Patient Name">
+                                    <mat-error>
+                                        Home Phone is required &nbsp;:&nbsp;
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+                        </div>
+
+                        <div class="row" fxLayoutAlign="start start">
+                            <div class="col-sm-6">
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Address</mat-label>
+                                    <input matInput formControlName="address" required
+                                        placeholder="Enter Your Patient Name">
+                                    <mat-error>
+                                        Address is required &nbsp;:&nbsp;
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+                            <div class="col-sm-6">
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Birth Date</mat-label>
+                                    <input matInput formControlName="birthDate" placeholder="Birth Date"
+                                        [matDatepicker]="picker" name="birthDate">
+                                    <mat-datepicker-toggle #toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                    <mat-datepicker #picker></mat-datepicker>
+                                    <mat-error>
+                                        Birth Date is required
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+                        </div>
+
+                        <div class="row" fxLayoutAlign="start start">
+                            <div class="col-sm-6">
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Status</mat-label>
+                                    <mat-select name="status" formControlName="status">
+                                        <mat-option value="Active">
+                                            Active
+                                        </mat-option>
+                                        <mat-option value="InActive">
+                                            InActive
+                                        </mat-option>
+                                    </mat-select>
+                                    <mat-error>
+                                        Status is required &nbsp;:&nbsp;
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Gender</mat-label>
+                                    <mat-select name="type" formControlName="gender">
+                                        <mat-option value="male">
+                                            Male
+                                        </mat-option>
+                                        <mat-option value="female">
+                                            FeMale
+                                        </mat-option>
+                                    </mat-select>
+                                    <mat-error>
+                                        Gender is required &nbsp;:&nbsp;
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+                        </div>
+
+                        <div class="row" fxLayoutAlign="start start">
+                            <div class="col-sm-6">
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Marital Status</mat-label>
+                                    <mat-select name="maritalStatus" formControlName="maritalStatus">
+                                        <mat-option value="Married">
+                                            Married
+                                        </mat-option>
+                                        <mat-option value="Unmarried">
+                                            Unmarried
+                                        </mat-option>
+                                    </mat-select>
+                                    <mat-error>
+                                        Marital Status is required &nbsp;:&nbsp;
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <mat-form-field appearance="outline">
+                                    <mat-label>EmpStatus</mat-label>
+                                    <input matInput formControlName="empStatus" required
+                                        placeholder="Enter Your Patient Name">
+                                    <mat-error>
+                                        EmpStatus is required &nbsp;:&nbsp;
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+                        </div>
+
+                        <div class="row" fxLayoutAlign="start start">
+                            <div class="col-sm-6">
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Email</mat-label>
+                                    <input matInput formControlName="email" required
+                                        placeholder="Enter Your Patient Name">
+                                    <mat-error>
+                                        Email is required &nbsp;:&nbsp;
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Race</mat-label>
+                                    <input matInput formControlName="race" required
+                                        placeholder="Enter Your Patient Name">
+                                    <mat-error>
+                                        Race is required &nbsp;:&nbsp;
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+                        </div>
+
+                        <div class="row" fxLayoutAlign="start start">
+                            <div class="col-sm-6">
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Soc Sec No</mat-label>
+                                    <input matInput formControlName="socSecNo" required
+                                        placeholder="Enter Your Patient Name">
+                                    <mat-error>
+                                        Soc Sec No is required &nbsp;:&nbsp;
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Language</mat-label>
+                                    <input matInput formControlName="language" required
+                                        placeholder="Enter Your Patient Name">
+                                    <mat-error>
+                                        Language is required &nbsp;:&nbsp;
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div *ngIf="type === 'medical'">
+                        <h3>Medical Problems</h3>
+
+                        <mat-form-field class="example-chip-list" appearance="outline" floatLabel="always">
+                            <mat-chip-list #chipList aria-label="Fruit selection">
+                                <mat-chip *ngFor="let jobTitle of problemTitles" [selectable]="selectable"
+                                    [removable]="removable" (removed)="removeProblem(jobTitle)">
+                                    {{jobTitle.title}}
+                                    <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+                                </mat-chip>
+                                <input placeholder="Problem..." [matChipInputFor]="chipList"
+                                    [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                                    [matChipInputAddOnBlur]="addOnBlur" (matChipInputTokenEnd)="addProblem($event)"
+                                    formControlName="problems">
+                            </mat-chip-list>
+                        </mat-form-field>
+
+                        <mat-form-field class="example-chip-list" appearance="outline" floatLabel="always">
+                            <mat-chip-list #chipList aria-label="Fruit selection">
+                                <mat-chip *ngFor="let jobTitle of medicationTitles" [selectable]="selectable"
+                                    [removable]="removable" (removed)="removeMedication(jobTitle)">
+                                    {{jobTitle.title}}
+                                    <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+                                </mat-chip>
+                                <input placeholder="Medication..." [matChipInputFor]="chipList"
+                                    [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                                    [matChipInputAddOnBlur]="addOnBlur" (matChipInputTokenEnd)="addMedication($event)"
+                                    formControlName="medications">
+                            </mat-chip-list>
+                        </mat-form-field>
+
+
+                        <div class="row" fxLayoutAlign="start start">
+                            <div class="col-sm-6">
+                                <mat-form-field appearance="outline">
+                                    <mat-label>General</mat-label>
+                                    <input matInput formControlName="general" required
+                                        placeholder="Enter Your Hospital Phone">
+                                    <mat-error>
+                                        General is required &nbsp;:&nbsp;
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+                            <div class="col-sm-6">
+                                <mat-form-field appearance="outline">
+                                    <mat-label>EyesEar/Nose/Throat</mat-label>
+                                    <input matInput formControlName="eyesEarOrNoseOrThroat" required
+                                        placeholder="Enter Your Hospital Phone">
+                                    <mat-error>
+                                        EyesEar/Nose/Throat is required &nbsp;:&nbsp;
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+                        </div>
+
+                        <div class="row" fxLayoutAlign="start start">
+                            <div class="col-sm-6">
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Cardiovascular</mat-label>
+                                    <input matInput formControlName="cardiovascular" required
+                                        placeholder="Enter Your Hospital Phone">
+                                    <mat-error>
+                                        Cardiovascular is required &nbsp;:&nbsp;
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Gastrointestinal Genitourinary</mat-label>
+                                    <input matInput formControlName="gastrointestinalGenitourinary" required
+                                        placeholder="Enter Your Hospital Phone">
+                                    <mat-error>
+                                        Gastrointestinal Genitourinary is required &nbsp;:&nbsp;
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+                        </div>
+
+                        <div class="row" fxLayoutAlign="start start">
+                            <div class="col-sm-6">
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Musculoskeletal</mat-label>
+                                    <input matInput formControlName="musculoskeletal" required
+                                        placeholder="Enter Your Hospital Phone">
+                                    <mat-error>
+                                        Musculoskeletal is required &nbsp;:&nbsp;
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+                            <div class="col-sm-6">
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Skin</mat-label>
+                                    <input matInput formControlName="skin" required
+                                        placeholder="Enter Your Hospital Phone">
+                                    <mat-error>
+                                        Skin is required &nbsp;:&nbsp;
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+                        </div>
+
+                        <div class="row" fxLayoutAlign="start start">
+                            <div class="col-sm-6">
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Neurologic</mat-label>
+                                    <input matInput formControlName="neurologic" required
+                                        placeholder="Enter Your Hospital Phone">
+                                    <mat-error>
+                                        Neurologic is required &nbsp;:&nbsp;
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Psychiatric</mat-label>
+                                    <input matInput formControlName="psychiatric" required
+                                        placeholder="Enter Your Hospital Phone">
+                                    <mat-error>
+                                        Psychiatric is required &nbsp;:&nbsp;
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+                        </div>
+
+                        <div class="row" fxLayoutAlign="start start">
+                            <div class="col-sm-6">
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Endocrine</mat-label>
+                                    <input matInput formControlName="endocrine" required
+                                        placeholder="Enter Your Hospital Phone">
+                                    <mat-error>
+                                        Endocrine is required &nbsp;:&nbsp;
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Heme/Lymphatic</mat-label>
+                                    <input matInput formControlName="hemeOrLymphatic" required
+                                        placeholder="Enter Your Hospital Phone">
+                                    <mat-error>
+                                        Heme/Lymphatic is required &nbsp;:&nbsp;
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+                        </div>
+
+                        <div class="row" fxLayoutAlign="start start">
+                            <div class="col-sm-6">
+                                <mat-form-field appearance="outline">
+                                    <mat-label>LymphaticAllergic/Immunologic</mat-label>
+                                    <input matInput formControlName="lymphaticAllergicOrImmunologic" required
+                                        placeholder="Enter Your Hospital Phone">
+                                    <mat-error>
+                                        LymphaticAllergic/Immunologic is required &nbsp;:&nbsp;
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div *ngIf="type === 'hospital'">
+                        <h3>Hospital Visit</h3>
+                        <div class="row" fxLayoutAlign="start start">
+                            <div class="col-sm-6">
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Hospital Name</mat-label>
+                                    <input matInput formControlName="hospitalName" required
+                                        placeholder="Enter Your Hospital Name">
+                                    <mat-error>
+                                        Hospital Name is required &nbsp;:&nbsp;
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Hospital Phone</mat-label>
+                                    <input matInput type="number" formControlName="hospitalPhone" required
+                                        placeholder="Enter Your Hospital Phone">
+                                    <mat-error>
+                                        Hospital Phone is required &nbsp;:&nbsp;
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+
+
+                            <div class="col-sm-6">
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Height</mat-label>
+                                    <input matInput formControlName="ht" required
+                                        placeholder="Enter Your Hospital Phone">
+                                    <mat-error>
+                                        Height is required &nbsp;:&nbsp;
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+                            <div class="col-sm-6">
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Weight</mat-label>
+                                    <input matInput type="number" formControlName="wt" required
+                                        placeholder="Enter Your Hospital Phone">
+                                    <mat-error>
+                                        Weight is required &nbsp;:&nbsp;
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Rhythm</mat-label>
+                                    <input matInput formControlName="rhythm" required
+                                        placeholder="Enter Your Hospital Phone">
+                                    <mat-error>
+                                        Rhythm is required &nbsp;:&nbsp;
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+                            <div class="col-sm-6">
+                                <mat-form-field appearance="outline">
+                                    <mat-label>BP</mat-label>
+                                    <input matInput formControlName="bP" required
+                                        placeholder="Enter Your Hospital Phone">
+                                    <mat-error>
+                                        Bp is required &nbsp;:&nbsp;
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <mat-form-field appearance="outline">
+                                    <mat-label>ReferredBy</mat-label>
+                                    <input matInput formControlName="referredBy" required
+                                        placeholder="Enter Your Patient Name">
+                                    <mat-error>
+                                        ReferredBy is required &nbsp;:&nbsp;
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button *ngIf="type === 'basic'" mat-raised-button color="primary" [disabled]="patientForm.invalid"
+                        style="float: right;" (click)="stepSecondForMedicalProblem()">
+                        <mat-icon>add</mat-icon> Next
+                    </button>
+
+                    <!-- <button *ngIf="type === 'medical'" mat-raised-button color="primary" style="float: right;"
+                        (click)="backToBasicData()">
+                        <mat-icon>add</mat-icon> Back
+                    </button> -->
+
+                    <!-- <button *ngIf="type === 'hospital'" mat-raised-button color="primary" style="float: right;"
+                        (click)="backToMedicalProblem()">
+                        <mat-icon>add</mat-icon> Back
+                    </button> -->
+
+                    <button *ngIf="type === 'medical'" mat-raised-button color="primary"
+                        [disabled]="patientForm.invalid" style="float: right;" (click)="stepSecondForHospitalVisit()">
+                        <mat-icon>add</mat-icon> Next
+                    </button>
+
+                    <button *ngIf="type === 'hospital'" mat-raised-button color="primary"
+                        [disabled]="patientForm.invalid" style="float: right;" (click)="addPatient()">
+                        <mat-icon>add</mat-icon> Add Patient
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
