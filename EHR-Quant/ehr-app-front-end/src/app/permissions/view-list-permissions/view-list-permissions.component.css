@@ -1,0 +1,16 @@
+table{
+    width:100%;
+}
+.delete-button{
+    background: none;
+    border:none;
+  }
+
+  span{
+    padding: 5px 10px 5px 10px;
+    box-shadow: 0 5px 5px gray;
+}
+.card-title{
+  font-weight: bold;
+  color: black;
+}

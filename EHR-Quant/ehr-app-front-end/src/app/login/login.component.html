@@ -1,0 +1,83 @@
+<div class="container">
+  <div class="logo">
+    <img src="/assets/img/logo.png" alt="">
+  </div>
+  <form [formGroup]="loginForm" *ngIf="type === 'login'">
+    <h3>Login</h3>
+    <div fxLayout="row" fxLayoutAlign="start start">
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="username" required>
+        <mat-icon matSuffix class="secondary-text">person</mat-icon>
+        <mat-error>
+          Email is required
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div fxLayout="row" fxLayoutAlign="start start">
+      <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input matInput type="password" formControlName="password" required>
+        <mat-icon matSuffix class="secondary-text">lock</mat-icon>
+        <mat-error>
+          Password is required
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div style="text-align: center;">
+      <button mat-raised-button color="primary" (click)="userLogin()" [disabled]="loginForm.invalid">
+        <mat-icon>exit_to_app</mat-icon> Login
+      </button>
+    </div>
+    <p style="padding-top: 20px;"><a href="javascript:void(0)" (click)="changeType('register')">Your are not
+        registered?</a></p>
+  </form>
+
+  <form [formGroup]="registerForm" *ngIf="type === 'register'">
+    <h3>Register</h3>
+    <div fxLayout="row" fxLayoutAlign="start start">
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" required>
+        <mat-icon matSuffix class="secondary-text">person</mat-icon>
+        <mat-error>
+          Email is required
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div fxLayout="row" fxLayoutAlign="start start">
+      <mat-form-field appearance="outline">
+        <mat-label>Wallet Address</mat-label>
+        <input matInput formControlName="walletAddress" required>
+        <mat-icon matSuffix class="secondary-text">lock</mat-icon>
+        <mat-error>
+          Wallet Address is required
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div fxLayout="row" fxLayoutAlign="start start">
+      <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input matInput type="password" formControlName="password" required>
+        <mat-icon matSuffix class="secondary-text">lock</mat-icon>
+        <mat-error>
+          Password is required
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div style="text-align: center;">
+      <button mat-raised-button color="primary" (click)="userRegister()" [disabled]="registerForm.invalid">
+        <mat-icon>person</mat-icon> Register
+      </button>
+    </div>
+    <p style="padding-top: 20px;"><a href="javascript:void(0)" (click)="changeType('login')">Your are already
+        registered?</a></p>
+  </form>
+
+  <h2>Electronic Health Report</h2>
+</div>
