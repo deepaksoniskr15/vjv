@@ -1,0 +1,6 @@
+npm i web3
+npm install truffle-contract
+npm install ethereumjs-testrpc web3@0.20.1
+npm install @types/node --save-dev
+ 
+

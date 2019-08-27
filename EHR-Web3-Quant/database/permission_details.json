@@ -1,0 +1,1 @@
+{"_id":{"$oid":"5d6495b2a7986c15bccd0a2b"},"createdAt":{"$date":"2019-08-27T02:30:10.057Z"},"updatedAt":{"$date":"2019-08-27T02:30:10.057Z"},"requesterName":"Test User","requesterAddress":"HGFghfhgFHGfhfGHfhgfghhGHf214851874","patientAddress":"HJHGNHsdfsdfdsfds58485485","patientName":"Patient Name","permissionLevel":1,"status":1,"_class":"com.ehr.app.model.Permission"}
