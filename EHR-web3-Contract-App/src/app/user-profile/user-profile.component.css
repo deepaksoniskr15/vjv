@@ -1,0 +1,11 @@
+table{
+    width:100%;
+}
+.delete-button{
+    background: none;
+    border:none;
+  }
+  .card-title{
+    font-weight: bold;
+    color: black;
+}

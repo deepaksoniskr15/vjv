@@ -1,0 +1,74 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header card-header-danger">
+            <h4 class="card-title" style="color: black;">{{heading}}</h4>
+            <button *ngIf="role === 0 || role === 2" mat-raised-button color="primary" (click)="addRequest()"
+              style="float: right;">Add
+              Request</button>
+            <!-- <p class="card-category"> Here is a subtitle for this table</p> -->
+          </div>
+          <div class="card-body">
+            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" [@animateStagger]="{value:'50'}">
+
+              <!-- Name Column -->
+              <ng-container matColumnDef="requesterName">
+                <th mat-header-cell *matHeaderCellDef> Requested By </th>
+                <td mat-cell *matCellDef="let element"> {{element.requesterName}} </td>
+              </ng-container>
+
+
+              <!-- Name Column -->
+              <ng-container matColumnDef="patientAddress">
+                <th mat-header-cell *matHeaderCellDef> Patient Address </th>
+                <td mat-cell *matCellDef="let element"> {{element.patientAddress}} </td>
+              </ng-container>
+
+              <!-- Name Column -->
+              <ng-container matColumnDef="patientName">
+                <th mat-header-cell *matHeaderCellDef> Patient Name </th>
+                <td mat-cell *matCellDef="let element"> {{element.patientName}} </td>
+              </ng-container>
+
+              <!-- Code Column -->
+              <ng-container matColumnDef="createdAt">
+                <th mat-header-cell *matHeaderCellDef> Created At </th>
+                <td mat-cell *matCellDef="let element"> {{element.createdAt}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="permissionLevel">
+                <th mat-header-cell *matHeaderCellDef> Permission Level </th>
+                <td mat-cell *matCellDef="let element"> Level {{element.permissionLevel}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="status">
+                <th mat-header-cell *matHeaderCellDef> Status </th>
+                <td mat-cell *matCellDef="let element">
+                  <span *ngIf="element.status === 0"
+                    style="color: white; background: yellow; color: black;">Pending</span>
+
+                  <span *ngIf="element.status === 1" style="color: white; background: rgb(15, 77, 2);">Approve</span>
+
+                  <span *ngIf="element.status === 2" style="color: white; background: rgb(224, 10, 10);">Reject</span>
+                </td>
+              </ng-container>
+
+              <ng-container matColumnDef="view">
+                <th mat-header-cell *matHeaderCellDef> View </th>
+                <td mat-cell *matCellDef="let element" title="Full View"> <button mat-button
+                    (click)="viewPermission(element)">
+                    <mat-icon>visibility</mat-icon>
+                  </button> </td>
+              </ng-container>
+
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns; let i = index"></tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

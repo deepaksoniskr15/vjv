@@ -1,0 +1,54 @@
+<!-- <mat-toolbar matDialogTitle class="custom-color">
+  <mat-toolbar-row fxLayout="row" fxLayoutAlign="space-between center"> -->
+<!-- </mat-toolbar-row>
+</mat-toolbar> -->
+<h3 style="background: rgb(33, 33, 155); color: white; padding: 5px;">Add Request <button
+    style="float: right;  background: transparent; box-shadow: 0px;" mat-button (click)="matDialogRef.close()"
+    aria-label="Close dialog">
+    <mat-icon>close</mat-icon>
+  </button></h3>
+<div fxlayoutAlign="center">
+  <form [formGroup]="requestForm">
+    <div fxLayout="row" fxLayoutAlign="start start">
+      <mat-form-field appearance="outline">
+        <mat-label>Patient Address</mat-label>
+        <input matInput formControlName="patientAddress" required (change)="getPatientName($event.target.value)">
+        <mat-icon matSuffix class="secondary-text">person</mat-icon>
+        <mat-error>
+          Patient Address is required
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div fxLayout="row" fxLayoutAlign="start start">
+      <mat-form-field appearance="outline">
+        <mat-label>Patient Name</mat-label>
+        <input matInput formControlName="patientName" value="{{patientName}}" readonly>
+        <mat-icon matSuffix class="secondary-text">lock</mat-icon>
+        <mat-error>
+          patient Name is required
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div fxLayout="row" fxLayoutAlign="start start">
+      <mat-form-field appearance="outline" floatLabel="always" class="input-fields">
+        <mat-label>Permission Level</mat-label>
+        <mat-select formControlName="permissionLevel" required placeholder="Choose Permission Level">
+          <mat-option *ngFor="let element of permissionLevelList" [value]="element.id">
+            {{element.value}}
+          </mat-option>
+        </mat-select>
+        <mat-error>
+          Permission Level is Required
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div style="text-align: center;">
+      <button mat-raised-button color="primary" (click)="addRequest()" [disabled]="requestForm.invalid">
+        <mat-icon>exit_to_app</mat-icon> Add Request
+      </button>
+    </div>
+  </form>
+</div>

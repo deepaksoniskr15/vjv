@@ -1,0 +1,137 @@
+<!-- <mat-toolbar matDialogTitle class="custom-color">
+  <mat-toolbar-row fxLayout="row" fxLayoutAlign="space-between center"> -->
+<!-- <p> View Patient Details
+  <button mat-button (click)="matDialogRef.close()" aria-label="Close dialog">
+    <mat-icon>close</mat-icon>
+  </button></p> -->
+<!-- </mat-toolbar-row>
+</mat-toolbar> -->
+<p> View Patient Details</p>
+<div fxlayoutAlign="center" style="max-height: 500px; overflow-y: scroll;">
+  <h4>Patient Details</h4>
+  <table class="table">
+    <tr>
+      <td class="heading">Patient Name : </td>
+      <td>{{patient.basicData.patientName}}</td>
+      <td class="heading">Home Phone : </td>
+      <td>{{patient.basicData.homePhone}}</td>
+    </tr>
+
+    <tr>
+      <td class="heading">Address : </td>
+      <td>{{patient.basicData.address}}</td>
+      <td class="heading">Birth Date : </td>
+      <td>{{patient.basicData.birthDate}}</td>
+    </tr>
+
+    <tr>
+      <td class="heading">status : </td>
+      <td>{{patient.basicData.status}}</td>
+      <td class="heading">Gender : </td>
+      <td>{{patient.basicData.gender}}</td>
+    </tr>
+
+    <tr>
+      <td class="heading">Marital Status : </td>
+      <td>{{patient.basicData.maritalStatus}}</td>
+      <td class="heading">Language : </td>
+      <td>{{patient.basicData.language}}</td>
+    </tr>
+
+    <tr>
+      <td class="heading">Race : </td>
+      <td>{{patient.basicData.race}}</td>
+      <td class="heading">SocSecNo : </td>
+      <td>{{patient.basicData.socSecNo}}</td>
+    </tr>
+
+    <tr>
+      <td class="heading">EmpStatus : </td>
+      <td>{{patient.basicData.empStatus}}</td>
+      <td class="heading">Email : </td>
+      <td>{{patient.basicData.email}}</td>
+    </tr>
+
+  </table>
+  <h4>Medical Problems</h4>
+  <table class="table">
+    <tr>
+      <td class="heading">Problems : </td>
+      <td>{{patient.medicalProblem.problems}}</td>
+    </tr>
+
+    <tr>
+      <td class="heading">Medications : </td>
+      <td>{{patient.medicalProblem.medications}}</td>
+    </tr>
+    <tr>
+      <td class="heading">general : </td>
+      <td>{{patient.medicalProblem.reviewOfSystems.general}}</td>
+      <td class="heading">eyesEarOrNoseOrThroat : </td>
+      <td>{{patient.medicalProblem.reviewOfSystems.eyesEarOrNoseOrThroat}}</td>
+    </tr>
+
+    <tr>
+      <td class="heading">cardiovascular : </td>
+      <td>{{patient.medicalProblem.reviewOfSystems.cardiovascular}}</td>
+      <td class="heading">gastrointestinalGenitourinary : </td>
+      <td>{{patient.medicalProblem.reviewOfSystems.gastrointestinalGenitourinary}}</td>
+    </tr>
+
+    <tr>
+      <td class="heading">musculoskeletal : </td>
+      <td>{{patient.medicalProblem.reviewOfSystems.musculoskeletal}}</td>
+      <td class="heading">skin : </td>
+      <td>{{patient.medicalProblem.reviewOfSystems.skin}}</td>
+    </tr>
+
+    <tr>
+      <td class="heading">neurologic : </td>
+      <td>{{patient.medicalProblem.reviewOfSystems.neurologic}}</td>
+      <td class="heading">psychiatric : </td>
+      <td>{{patient.medicalProblem.reviewOfSystems.psychiatric}}</td>
+    </tr>
+
+    <tr>
+      <td class="heading">endocrine : </td>
+      <td>{{patient.medicalProblem.reviewOfSystems.endocrine}}</td>
+      <td class="heading">hemeOrLymphatic : </td>
+      <td>{{patient.medicalProblem.reviewOfSystems.hemeOrLymphatic}}</td>
+    </tr>
+
+    <tr>
+      <td class="heading">lymphaticAllergicOrImmunologic : </td>
+      <td>{{patient.medicalProblem.reviewOfSystems.lymphaticAllergicOrImmunologic}}</td>
+    </tr>
+  </table>
+
+  <h4>Hospital Visit</h4>
+  <table>
+    <tr>
+      <td class="heading">hospitalName : </td>
+      <td>{{patient.hospitalVisit.hospitalName}}</td>
+    </tr>
+
+    <tr>
+      <td class="heading">hospitalPhone : </td>
+      <td>{{patient.hospitalVisit.hospitalPhone}}</td>
+      <td class="heading">ReferredBy : </td>
+      <td>{{patient.hospitalVisit.referredBy}}</td>
+    </tr>
+
+    <tr>
+      <td class="heading">Ht : </td>
+      <td>{{patient.hospitalVisit.ht}}</td>
+      <td class="heading">Wt : </td>
+      <td>{{patient.hospitalVisit.wt}}</td>
+    </tr>
+
+    <tr>
+      <td class="heading">Rhythm : </td>
+      <td>{{patient.hospitalVisit.rhythm}}</td>
+      <td class="heading">BP : </td>
+      <td>{{patient.hospitalVisit.bP}}</td>
+    </tr>
+
+  </table>
+</div>
