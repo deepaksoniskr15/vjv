@@ -23,7 +23,7 @@
     "@angular/platform-browser-dynamic": "~8.2.4",
     "@angular/router": "~8.2.4",
     "@covalent/core": "^2.1.1",
-    "ajv": "6.4.0",
+    "ajv": "6.12.3",
     "arrive": "2.4.1",
     "bootstrap": "4.1.0",
     "bootstrap-material-design": "4.1.1",
